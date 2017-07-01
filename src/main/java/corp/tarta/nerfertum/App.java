@@ -1,5 +1,9 @@
 package corp.tarta.nerfertum;
 
+import corp.tarta.nerfertum.Exceptions.EpsonPrinterException;
+import corp.tarta.nerfertum.Model.Entities.ShoppingCart;
+import corp.tarta.nerfertum.Model.IOControllers.EpsonPrintController;
+import corp.tarta.nerfertum.Model.IOControllers.PrintController;
 import corp.tarta.nerfertum.View.GridView;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -31,7 +35,31 @@ public class App extends Application {
 
     public static void main( String[] args )
     {
-        launch(args);
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("PATH------------------------------------");
+      System.out.println(System.getProperty("java.library.path"));
+      System.out.println("PATH------------------------------------");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+        PrintController printer = EpsonPrintController.getInstance();
+        for(int i = 1; i < 10; i++){
+            printer.setPort("COM" + i);
+            try {
+                printer.printTicket(new ShoppingCart());
+            } catch (EpsonPrinterException e) {
+                System.out.println("ERROR AL IMPRIRMI EN PUERTO COM" + i);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        //Command console = new ExecutorCommand();
+        //console.doExecute("mkdir newFolder");
+       launch(args);
     }
 
     @Override

@@ -6,6 +6,7 @@ package corp.tarta.nerfertum.Model.Entities;
 public class CartProduct {
 
     private Long productId;
+    private String description;
     private Integer quantity;
     private Float total;
 
@@ -21,6 +22,14 @@ public class CartProduct {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Integer getQuantity() {
