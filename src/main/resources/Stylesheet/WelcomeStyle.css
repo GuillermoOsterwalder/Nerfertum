@@ -1,0 +1,13 @@
+*{
+    -fx-base: #e6e6e6;
+
+}
+
+.pane{
+    -fx-background-color: -fx-base;
+}
+
+.label{
+    -fx-alignment: CENTER;
+    -fx-underline: true;
+}

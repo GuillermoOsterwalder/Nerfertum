@@ -1,6 +1,7 @@
 package corp.tarta.nerfertum;
 
 import corp.tarta.nerfertum.View.GridView;
+import corp.tarta.nerfertum.View.ViewPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -42,12 +43,13 @@ public class App extends Application {
     }
 
     public void configStage(){
-        Scene loginScene = new Scene(new GridView());
-        this.mainStage.setScene(loginScene);
+        MainPane mainPane = MainPane.getInstance();
+        Scene mainScene = new Scene(mainPane);
+        this.mainStage.setScene(mainScene);
         this.mainStage.setTitle(this.APP_NAME);
         this.mainStage.initStyle(StageStyle.DECORATED);
         this.mainStage.setMaximized(true);
-        this.mainStage.setResizable(false);
+        this.mainStage.setResizable(true);
     }
 
     public void goToMain(){

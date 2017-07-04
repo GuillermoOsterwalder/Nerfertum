@@ -1,0 +1,16 @@
+*{
+    -fx-base: #fafafa;
+}
+
+.pane{
+    -fx-background-color: -fx-base;
+
+}
+
+.button{
+    -fx-alignment: CENTER;
+    -fx-border-color: #ffffffff;
+
+
+}
+
