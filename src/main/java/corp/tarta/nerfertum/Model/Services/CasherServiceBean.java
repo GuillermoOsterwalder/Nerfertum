@@ -2,7 +2,9 @@ package corp.tarta.nerfertum.Model.Services;
 
 import corp.tarta.nerfertum.Exceptions.NullValueException;
 import corp.tarta.nerfertum.Model.Entities.AccountMovement;
+import corp.tarta.nerfertum.Model.Entities.PrivateAccountMovement;
 import corp.tarta.nerfertum.Model.Repositories.AccountMovementRepository;
+import corp.tarta.nerfertum.Model.Repositories.PrivateAccountMovementRepository;
 
 import java.util.List;
 
@@ -11,15 +13,15 @@ import java.util.List;
  */
 public class CasherServiceBean implements CasherService{
 
-    private final Long CASHER_ID = 999999l;
+    private final Long CASHER_ID = 1l;
 
     private static CasherServiceBean instance = null;
 
-    private AccountMovementRepository accountMovementRepository;
+    private PrivateAccountMovementRepository privateAccountMovementRepository;
 
 
     private CasherServiceBean(){
-        //accountRepository = new AccountRepositoryBean();
+        //privateAccountRepository = new PrivateAccountRepositoryBean();
     }
 
     public static CasherService getInstance(){
@@ -30,9 +32,9 @@ public class CasherServiceBean implements CasherService{
     }
 
     @Override
-    public void addMovement(AccountMovement accountMovement) throws NullValueException {
-        if(accountMovement != null){
-            accountMovementRepository.save(accountMovement);
+    public void addMovement(PrivateAccountMovement privateAccountMovement) throws NullValueException {
+        if(privateAccountMovement != null){
+            privateAccountMovementRepository.save(privateAccountMovement);
         }else{
             throw new NullValueException();
         }
@@ -40,23 +42,23 @@ public class CasherServiceBean implements CasherService{
 
     @Override
     public void endDay() {
-        accountMovementRepository.deleteAllFromAccount(this.CASHER_ID);
+        privateAccountMovementRepository.deleteAllFromAccount(this.CASHER_ID);
         //printer zday();
     }
 
     @Override
     public Float getBalance() {
-        List<AccountMovement> accountMovements = accountMovementRepository.findByAccount(this.CASHER_ID);
+        List<PrivateAccountMovement> privateAccountMovements = privateAccountMovementRepository.findByAccount(this.CASHER_ID);
         Float balance = 0f;
-        for(AccountMovement accountMovement: accountMovements){
-            balance += accountMovement.getAmmount();
+        for(PrivateAccountMovement privateAccountMovement: privateAccountMovements){
+            balance += privateAccountMovement.getAmmount();
         }
         return balance;
     }
 
     @Override
-    public List<AccountMovement> getAllMovements() {
-        return accountMovementRepository.findByAccount(this.CASHER_ID);
+    public List<PrivateAccountMovement> getAllMovements() {
+        return privateAccountMovementRepository.findByAccount(this.CASHER_ID);
 
     }
 

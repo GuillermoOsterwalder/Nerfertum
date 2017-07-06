@@ -1,5 +1,7 @@
 package corp.tarta.nerfertum.Model.Entities;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
@@ -9,13 +11,13 @@ import java.time.LocalTime;
 public class OrderInvoice {
 
     private Long id;
-    private LocalTime date;
+    private Timestamp date;
     private Long buyerId;
     private Float total;
 
     public OrderInvoice(){
         id = 0l;
-        date = LocalTime.now();
+        date = Timestamp.valueOf(LocalDateTime.now());
         buyerId = -1l;
         total = 0f;
     }
@@ -28,11 +30,11 @@ public class OrderInvoice {
         this.id = id;
     }
 
-    public LocalTime getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(LocalTime date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

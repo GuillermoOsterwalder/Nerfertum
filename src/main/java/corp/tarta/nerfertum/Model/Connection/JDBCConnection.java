@@ -36,8 +36,8 @@ public class JDBCConnection implements DatabaseConnection {
     public static JDBCConnection getInstance(){
         if(instanceConnection == null){
             instanceConnection = new JDBCConnection();
+            instanceConnection.connect();
         }
-        instanceConnection.connect();
         return instanceConnection;
     }
 

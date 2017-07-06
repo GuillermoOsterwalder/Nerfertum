@@ -5,6 +5,7 @@ import corp.tarta.nerfertum.Exceptions.NotFoundException;
 import corp.tarta.nerfertum.Exceptions.NullValueException;
 import corp.tarta.nerfertum.Model.Entities.Product;
 import corp.tarta.nerfertum.Model.Repositories.ProductRepository;
+import corp.tarta.nerfertum.Model.Repositories.ProductRepositoryBean;
 
 import java.util.List;
 
@@ -18,10 +19,10 @@ public class ProductServiceBean implements ProductService {
     private ProductRepository productRepository;
 
     private ProductServiceBean(){
-        //productRepository = new ProductRepositoryBean();
+        productRepository = new ProductRepositoryBean();
     }
 
-    public ProductServiceBean getInstance(){
+    public static ProductServiceBean getInstance(){
         if (instance == null){
             instance = new ProductServiceBean();
         }

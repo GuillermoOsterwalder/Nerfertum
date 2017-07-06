@@ -3,7 +3,7 @@ package corp.tarta.nerfertum.Model.Entities;
 /**
  * Created by mariano on 27/06/17.
  */
-public abstract class PaymentMethod {
+public class PaymentMethod {
 
     private Long id;
     private String method;

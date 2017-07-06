@@ -20,6 +20,4 @@ public interface ProductRepository {
     List<Product> findAll();
 
     List<Product> findByDescription(String description);
-
-    List<Product> findByIdOrDescription(Long id, String description);
 }

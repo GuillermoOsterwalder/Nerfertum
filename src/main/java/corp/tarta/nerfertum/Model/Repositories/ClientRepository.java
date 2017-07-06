@@ -19,5 +19,6 @@ public interface ClientRepository {
 
     List<Client> findAll();
 
+    Long nextId();
 
 }

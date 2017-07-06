@@ -13,9 +13,7 @@ public interface OrderProductRepository {
 
     OrderProduct findOne(Long id);
 
-    void update(OrderProduct orderProduct);
-
-    void delete(Long id);
-
     List<OrderProduct> findByOrder(Long id);
+
+    Long nextId();
 }

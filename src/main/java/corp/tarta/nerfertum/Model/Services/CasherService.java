@@ -2,6 +2,7 @@ package corp.tarta.nerfertum.Model.Services;
 
 import corp.tarta.nerfertum.Exceptions.NullValueException;
 import corp.tarta.nerfertum.Model.Entities.AccountMovement;
+import corp.tarta.nerfertum.Model.Entities.PrivateAccountMovement;
 
 import java.util.List;
 
@@ -10,13 +11,13 @@ import java.util.List;
  */
 public interface CasherService {
 
-    void addMovement(AccountMovement accountMovement) throws NullValueException;
+    void addMovement(PrivateAccountMovement privateAccountMovement) throws NullValueException;
 
     void endDay();
 
     Float getBalance();
 
-    List<AccountMovement> getAllMovements();
+    List<PrivateAccountMovement> getAllMovements();
 
     Long getCasherId();
 }

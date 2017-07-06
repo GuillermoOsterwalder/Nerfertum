@@ -16,4 +16,6 @@ public interface AccountMovementRepository {
     List<AccountMovement> findByAccount(Long id);
 
     void deleteAllFromAccount(Long id);
+
+    Long nextId();
 }

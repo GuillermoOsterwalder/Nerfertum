@@ -59,9 +59,9 @@ public class EpsonPrintController implements PrintController {
   public void printTicket(ShoppingCart shoppingCart) throws EpsonPrinterException {
       connect(this.port);
       openTicket();
-      for(CartProduct cartProduct : shoppingCart.getProducts()){
+      /*for(CartProduct cartProduct : shoppingCart.getProducts()){
         addItemToTicket(cartProduct);
-      }
+      }*/
       addDiscount(0f);
       addPayment(0f);
       closeTicket();

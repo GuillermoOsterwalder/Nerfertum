@@ -1,5 +1,7 @@
 package corp.tarta.nerfertum.Model.Entities;
 
+import java.time.LocalDateTime;
+
 /**
  * Created by mariano on 26/06/17.
  */
@@ -10,6 +12,7 @@ public class ProviderProduct {
     private Long assosiatedProduct;
     private String description;
     private Float price;
+
 
     public ProviderProduct(){
         id = 0l;

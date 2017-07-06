@@ -8,6 +8,8 @@ import corp.tarta.nerfertum.Model.IOControllers.EpsonPrintController;
 import corp.tarta.nerfertum.Model.Repositories.OrderInvoiceRepository;
 import corp.tarta.nerfertum.Model.Repositories.OrderProductRepository;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.LinkedList;
 import java.util.List;
@@ -161,7 +163,7 @@ public class ShoppingCartServiceBean implements ShoppingCartService{
         orderInvoice.setBuyerId(shoppingCart.getClient().getId());
         //add disscount
         orderInvoice.setTotal(getTotal());
-        orderInvoice.setDate(LocalTime.now());
+        orderInvoice.setDate(Timestamp.valueOf(LocalDateTime.now()));
         orderInvoiceRepository.save(orderInvoice);
 
         /**
@@ -179,9 +181,9 @@ public class ShoppingCartServiceBean implements ShoppingCartService{
         /**
          * Adds movement to casher
          */
-        AccountMovement sellMovement = new AccountMovement();
+        PrivateAccountMovement sellMovement = new PrivateAccountMovement();
         sellMovement.setAccountId(CasherServiceBean.getInstance().getCasherId());
-        sellMovement.setDate(LocalTime.now());
+        sellMovement.setDate(Timestamp.valueOf(LocalDateTime.now()));
         sellMovement.setAmmount(orderInvoice.getTotal());
         sellMovement.setDescription("Venta nro: " + orderInvoice.getId());
         sellMovement.setBalance(CasherServiceBean.getInstance().getBalance() - sellMovement.getAmmount());

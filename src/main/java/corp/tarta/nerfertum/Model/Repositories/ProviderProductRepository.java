@@ -9,15 +9,17 @@ import java.util.List;
  */
 public interface ProviderProductRepository {
 
-    void save(ProviderProduct client);
+    void save(ProviderProduct providerProduct);
 
     ProviderProduct findOne(Long id);
 
-    void update(ProviderProduct client);
+    void update(ProviderProduct providerProduct);
 
     void delete(Long id);
 
     List<ProviderProduct> findByProvider(Long id);
 
     ProviderProduct findByAssosiatedProduct(Long id);
+
+    Long nextId();
 }

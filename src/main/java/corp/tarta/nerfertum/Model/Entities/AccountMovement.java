@@ -1,5 +1,7 @@
 package corp.tarta.nerfertum.Model.Entities;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -9,7 +11,7 @@ import java.util.Date;
 public class AccountMovement {
     private Long id;
     private Long accountId;
-    private LocalTime date;
+    private Timestamp date;
     private String description;
     private Float ammount;
     private Float balance;
@@ -19,7 +21,7 @@ public class AccountMovement {
         id = 0l;
         accountId = 0l;
 
-        date = LocalTime.now();
+        date = Timestamp.valueOf(LocalDateTime.now());
         description = "";
         ammount = 0f;
         balance = 0f;
@@ -41,11 +43,11 @@ public class AccountMovement {
         this.accountId = accountId;
     }
 
-    public LocalTime getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public void setDate(LocalTime date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
 

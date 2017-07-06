@@ -19,4 +19,6 @@ public interface PaymentMethodRepository {
 
     List<PaymentMethod> findAll();
 
+    Long nextId();
+
 }
