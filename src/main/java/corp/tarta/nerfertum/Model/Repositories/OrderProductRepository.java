@@ -9,15 +9,13 @@ import java.util.List;
  */
 public interface OrderProductRepository {
 
-    public void save(OrderProduct orderProduct);
+    void save(OrderProduct orderProduct);
 
-    public OrderProduct findOne(Long id);
+    OrderProduct findOne(Long id);
 
-    public void update(OrderProduct orderProduct);
+    void update(OrderProduct orderProduct);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<OrderProduct> findAll();
-
-    public List<OrderProduct> findByOrder(Long id);
+    List<OrderProduct> findByOrder(Long id);
 }

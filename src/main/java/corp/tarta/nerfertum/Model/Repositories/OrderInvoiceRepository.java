@@ -9,16 +9,18 @@ import java.util.List;
  */
 public interface OrderInvoiceRepository {
 
-    public void save(OrderInvoice orderInvoice);
+    void save(OrderInvoice orderInvoice);
 
-    public OrderInvoice findOne(Long id);
+    OrderInvoice findOne(Long id);
 
-    public void update(OrderInvoice orderInvoice);
+    void update(OrderInvoice orderInvoice);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<OrderInvoice> findAll();
+    List<OrderInvoice> findAll();
 
-    public List<OrderInvoice> findByBuyer(Long id);
+    List<OrderInvoice> findByClient(Long id);
+
+    Long nextId();
 
 }

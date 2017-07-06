@@ -9,17 +9,13 @@ import java.util.List;
  */
 public interface ProviderRepository {
 
-    public void save(Provider provider);
+    void save(Provider provider);
 
-    public Provider findOne(Long id);
+    Provider findOne(Long id);
 
-    public void update(Provider provider);
+    void update(Provider provider);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<Provider> findAll();
-
-    public List<Provider> findByName(String name);
-
-    public List<Provider> findByIdOrName(Long id, String name);
+    List<Provider> findAll();
 }

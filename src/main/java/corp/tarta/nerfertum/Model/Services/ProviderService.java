@@ -2,6 +2,7 @@ package corp.tarta.nerfertum.Model.Services;
 
 import corp.tarta.nerfertum.Exceptions.AlreadyExistsException;
 import corp.tarta.nerfertum.Exceptions.NotFoundException;
+import corp.tarta.nerfertum.Exceptions.NullValueException;
 import corp.tarta.nerfertum.Model.Entities.ExcelParameters;
 import corp.tarta.nerfertum.Model.Entities.Provider;
 import corp.tarta.nerfertum.Model.Entities.ProviderProduct;
@@ -14,28 +15,25 @@ import java.util.List;
  */
 public interface ProviderService {
 
-  void addProvider(Provider provider) throws AlreadyExistsException;
+  void addProvider(Provider provider) throws AlreadyExistsException, NullValueException;
 
-  Provider getProvider(Long id) throws NotFoundException;
+  Provider getProvider(Long id) throws NotFoundException, NullValueException;
 
-  void updateProvider(Provider provider) throws NotFoundException;
+  void updateProvider(Provider provider) throws NotFoundException, NullValueException;
 
-  void deleteProvider(Long id) throws NotFoundException;
+  void deleteProvider(Long id) throws NotFoundException, NullValueException;
 
   List<Provider> getAll();
 
-  List<ProviderProduct> getProviderProductsByProviderId(Long providerId) throws NotFoundException;
+  List<ProviderProduct> getProviderProductsByProviderId(Long providerId) throws NotFoundException, NullValueException;
 
-  ProviderProduct getProviderProductByAssosiatedProduct(Long id) throws NotFoundException;
+  ProviderProduct getProviderProductByAssosiatedProduct(Long id) throws NotFoundException, NullValueException;
 
-  void addToListPrice(Long id, List<ProviderProduct> providerProducts) throws NotFoundException;
+  void addToListPrice(List<ProviderProduct> providerProducts) throws  NullValueException;
 
-  void addProviderProduct(ProviderProduct providerProduct) throws AlreadyExistsException;
+  void addProviderProduct(ProviderProduct providerProduct);
 
-  void updateProviderProduct(ProviderProduct providerProduct) throws NotFoundException;
-
-  void deleteProviderProduct(Long id) throws NotFoundException;
+  void deleteProviderProduct(Long id) throws NotFoundException, NullValueException;
 
   void updateListPriceFromExcel(Long id, String path, ExcelParameters excelParameters) throws NotFoundException, IOException;
-
 }

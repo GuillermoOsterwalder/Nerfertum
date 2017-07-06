@@ -9,15 +9,11 @@ import java.util.List;
  */
 public interface AccountMovementRepository {
 
-    public void save(AccountMovement accountMovement);
+    void save(AccountMovement accountMovement);
 
-    public AccountMovement findOne(Long id);
+    AccountMovement findOne(Long id);
 
-    public void update(AccountMovement accountMovement);
+    List<AccountMovement> findByAccount(Long id);
 
-    public void delete(Long id);
-
-    public List<AccountMovement> findAll();
-
-    public List<AccountMovement> findByAccount(Long id);
+    void deleteAllFromAccount(Long id);
 }

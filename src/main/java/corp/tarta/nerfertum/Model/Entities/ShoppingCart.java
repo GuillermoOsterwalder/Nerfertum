@@ -1,27 +1,34 @@
 package corp.tarta.nerfertum.Model.Entities;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by morio on 28/06/17.
  */
 public class ShoppingCart {
 
-    private List<CartProduct> products;
+    private Map<Long,CartProduct> products;
+    private Float disscount;
     private Client client;
     private PaymentMethod paymentMethod;
 
     public ShoppingCart(){
-      products = new LinkedList<>();
+      products = new HashMap<>();
     }
 
-  public List<CartProduct> getProducts() {
+  public Map<Long,CartProduct> getProducts() {
     return products;
   }
 
-  public void setProducts(List<CartProduct> products) {
-    this.products = products;
+  public Float getDisscount() {
+      return disscount;
+  }
+
+  public void setDisscount(Float disscount) {
+      this.disscount = disscount;
   }
 
   public Client getClient() {

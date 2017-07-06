@@ -9,17 +9,17 @@ import java.util.List;
  */
 public interface ProductRepository {
 
-    public void save(Product product);
+    void save(Product product);
 
-    public Product findOne(Long id);
+    Product findOne(Long id);
 
-    public void update(Product product);
+    void update(Product product);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<Product> findAll();
+    List<Product> findAll();
 
-    public List<Product> findByDescription(String description);
+    List<Product> findByDescription(String description);
 
-    public List<Product> findByIdOrDescription(Long id, String description);
+    List<Product> findByIdOrDescription(Long id, String description);
 }

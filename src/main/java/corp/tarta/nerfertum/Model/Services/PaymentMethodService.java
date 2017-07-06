@@ -2,6 +2,7 @@ package corp.tarta.nerfertum.Model.Services;
 
 import corp.tarta.nerfertum.Exceptions.AlreadyExistsException;
 import corp.tarta.nerfertum.Exceptions.NotFoundException;
+import corp.tarta.nerfertum.Exceptions.NullValueException;
 import corp.tarta.nerfertum.Model.Entities.PaymentMethod;
 
 import java.util.List;
@@ -11,13 +12,13 @@ import java.util.List;
  */
 public interface PaymentMethodService {
 
-  void addPaymentMethod(PaymentMethod provider) throws AlreadyExistsException;
+  void addPaymentMethod(PaymentMethod paymentMethod) throws AlreadyExistsException, NullValueException;
 
-  PaymentMethod getPaymentMethod(Long id) throws NotFoundException;
+  PaymentMethod getPaymentMethod(Long id) throws NotFoundException, NullValueException;
 
-  void updatePaymentMethod(PaymentMethod provider) throws NotFoundException;
+  void updatePaymentMethod(PaymentMethod paymentMethod) throws NotFoundException, NullValueException;
 
-  void deletePaymentMethod(Long id) throws NotFoundException;
+  void deletePaymentMethod(Long id) throws NotFoundException, NullValueException;
 
   List<PaymentMethod> getAll();
 

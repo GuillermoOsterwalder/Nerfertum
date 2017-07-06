@@ -9,15 +9,15 @@ import java.util.List;
  */
 public interface AccountRepository {
 
-    public void save(Account account);
+    void save(Account account);
 
-    public Account findOne(Long id);
+    Account findOne(Long id);
 
-    public void update(Account account);
+    void update(Account account);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<Account> findAll();
+    List<Account> findAll();
 
-    public List<Account> findByOwner(Long id);
+    Account findByOwner(Long id);
 }

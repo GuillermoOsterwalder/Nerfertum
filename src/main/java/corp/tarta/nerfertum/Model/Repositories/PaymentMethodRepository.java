@@ -9,15 +9,14 @@ import java.util.List;
  */
 public interface PaymentMethodRepository {
 
-    public void save(PaymentMethod paymentMethod);
+    void save(PaymentMethod paymentMethod);
 
-    public PaymentMethod findOne(Long id);
+    PaymentMethod findOne(Long id);
 
-    public void update(PaymentMethod provider);
+    void update(PaymentMethod provider);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<PaymentMethod> findAll();
+    List<PaymentMethod> findAll();
 
-    public List<PaymentMethod> findByMethod(String method);
 }

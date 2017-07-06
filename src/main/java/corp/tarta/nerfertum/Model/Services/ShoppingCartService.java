@@ -1,40 +1,47 @@
 package corp.tarta.nerfertum.Model.Services;
 
+import corp.tarta.nerfertum.Exceptions.EpsonPrinterException;
+import corp.tarta.nerfertum.Exceptions.NotFoundException;
+import corp.tarta.nerfertum.Exceptions.NullValueException;
 import corp.tarta.nerfertum.Model.Entities.CartProduct;
 import corp.tarta.nerfertum.Model.Entities.Client;
 import corp.tarta.nerfertum.Model.Entities.PaymentMethod;
 import corp.tarta.nerfertum.Model.Entities.Product;
+
+import java.util.List;
 
 /**
  * Created by morio on 28/06/17.
  */
 public interface ShoppingCartService {
 
-  void addToCart(Product product, int quantity);
+  void addToCart(Product product, int quantity) throws NullValueException;
 
-  void addToCart(CartProduct cartProduct);
-
-  CartProduct getCartProduct(Long id);
-
-  void updateToCart(CartProduct cartProduct);
-
-  void removeFromCart(Long id);
+  void removeFromCart(Long id) throws NotFoundException, NullValueException;
 
   Float getSubTotal();
 
-  Float getDisscount();
+  void setDisscount(Float disscount) throws NullValueException;
+
+  Float getDisscountPercent();
+
+  Float getDisscountPrice();
 
   Float getTotal();
 
-  void setClient(Client client);
+  void setClient(Client client) throws NullValueException;
 
   Client getClient();
 
-  void setPaymentMethod(PaymentMethod paymentMethod);
+  void setPaymentMethod(PaymentMethod paymentMethod) throws NullValueException;
 
   PaymentMethod getPaymentMethod();
 
-  void executeSell();
+  List<CartProduct> getAll();
 
-  void executeSellAndPrint();
+  void clear();
+
+  void executeSell() throws NotFoundException, NullValueException;
+
+  void executeSellAndPrint() throws NullValueException, EpsonPrinterException;
 }

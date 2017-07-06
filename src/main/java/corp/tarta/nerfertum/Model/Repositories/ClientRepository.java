@@ -9,18 +9,15 @@ import java.util.List;
  */
 public interface ClientRepository {
 
-    public void save(Client client);
+    void save(Client client);
 
-    public Client findOne(Long id);
+    Client findOne(Long id);
 
-    public void update(Client client);
+    void update(Client client);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public List<Client> findAll();
+    List<Client> findAll();
 
-    public List<Client> findByName(String name);
-
-    public List<Client> findByIdOrName(Long id, String name);
 
 }

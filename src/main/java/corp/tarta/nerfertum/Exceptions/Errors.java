@@ -5,6 +5,7 @@ package corp.tarta.nerfertum.Exceptions;
  */
 public enum Errors {
 
+    NULL_VALUE("Null value"),
     NOT_FOUND("Not found"),
     ALREADY_EXISTS("Already Exists"),
     PRINTER_FAIL("Error to print at the specified port");
