@@ -14,6 +14,10 @@ public enum ComponentStyleElements {
     CLIENT_STYLESHEET("Stylesheet/ClientStyle.css"),
     PROVIDER_STYLESHEET("Stylesheet/ProviderStyle.css"),
     WELCOME_STYLESHEET("Stylesheet/WelcomeStyle.css"),
+    SELL_STYLESHEET("Stylesheet/SellStyle.css"),
+    STOCKDIALOG_STYLESHEET("Stylesheet/StockDialogStyle.css"),
+    CLIENTDIALOG_STYLESHEET("Stylesheet/ClientDialogStyle.css"),
+    PROVIDERDIALOG_STYLESHEET("Stylesheet/ClientDialogStyle.css"),
 
 
     // HEADER CLASSES
@@ -22,20 +26,32 @@ public enum ComponentStyleElements {
     // WELCOME CLASSES
     WELCOME_CLASS("pane"),
 
-    // SUPPLIERS CLASSES
+    // PROVIDER CLASSES
     PROVIDER_CLASS("pane"),
+
+    // PROVIDER CLASSES
+    PROVIDERDIALOG_CLASS("pane"),
 
     // FOOTER CLASSES
     FOOTER_CLASS("pane"),
 
-    // BUYERS CLASSES
+    // CLIENT CLASSES
     CLIENT_CLASS("pane"),
+
+    // CLIENT CLASSES
+    CLIENTDIALOG_CLASS("pane"),
 
     // STOCK CLASSES
     STOCK_CLASS("pane"),
 
+    // STOCKDIALOG CLASSES
+    STOCKDIALOG_CLASS("pane"),
+
     // NAVBAR CLASSES
-    NAVBAR_CLASS("pane");
+    NAVBAR_CLASS("pane"),
+
+    // SELL CLASSES
+    SELL_CLASS("pane");
 
     private String path;
 

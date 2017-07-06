@@ -1,5 +1,6 @@
 package corp.tarta.nerfertum.Controls;
 
+import corp.tarta.nerfertum.MainPane;
 import corp.tarta.nerfertum.View.GridView;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.Button;
@@ -32,26 +33,29 @@ public class ClientPane extends GridView{
     }
 
     private void inicThings() {
-        title = new Label("  Clientes");
+        title = new Label("Clientes");
         title.getStyleClass().add("title");
         title.setFont(Font.font ("Verdana", 20));
-        addChild(title,0,0,8,1);
+        addChild(title,5,0,8,1);
 
-        TableView<Persona> tableView = new TableView();
-        TableColumn<Persona, StringProperty> colNombre = new TableColumn<>("Nombre");
-        TableColumn<Persona, StringProperty> colApellido = new TableColumn<>("Apellido");
-        TableColumn<Persona, StringProperty> colId = new TableColumn<>("Id");
-        tableView.getColumns().addAll(colNombre, colApellido, colId);
+        TableView<ClientPane> tableView = new TableView();
+        TableColumn<ClientPane, StringProperty> colId = new TableColumn<>("Id");
+        TableColumn<ClientPane, StringProperty> colName = new TableColumn<>("Nombre");
+        TableColumn<ClientPane, StringProperty> colLastName = new TableColumn<>("Apellido");
+        TableColumn<ClientPane, StringProperty> colAdress = new TableColumn<>("Dirección");
+        TableColumn<ClientPane, StringProperty> colPhone = new TableColumn<>("Telefono");
+        TableColumn<ClientPane, StringProperty> colMail = new TableColumn<>("Mail");
+        tableView.getColumns().addAll(colId, colName, colLastName, colAdress, colPhone, colMail);
 
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colLastName.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        colAdress.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        colPhone.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        colMail.setCellValueFactory(new PropertyValueFactory<>("mail"));
 
-        //Persona p1 = new Persona(new StringProperty"juan",new StringProperty("juan"),new StringProperty("juan"));
-        //Persona p2 = new Persona("Maria", "Loza", "32412341341");
-        //Persona p3 = new Persona("Adriana", "Mendez", "32412341991");
 
-        //tableView.getItems().addAll(p1, p2, p3);
+
 
         addChild(tableView,1,2,10,11);
 
@@ -60,18 +64,19 @@ public class ClientPane extends GridView{
     private void inicButtons() {
         modifyClientButton = new Button("Actualizar");
         modifyClientButton.getStyleClass().add("boton");
-        modifyClientButton.setFont(Font.font("Verdana", 11));
-        addChild(modifyClientButton, 7, 14, 1, 1);
+        modifyClientButton.setFont(Font.font("Verdana", 16));
+        addChild(modifyClientButton, 8, 14, 2, 1);
 
         deleteClientButton = new Button("Borrar");
         deleteClientButton.getStyleClass().add("boton");
-        deleteClientButton.setFont(Font.font("Verdana", 11));
-        addChild(deleteClientButton, 5, 14, 1, 1);
+        deleteClientButton.setFont(Font.font("Verdana", 16));
+        addChild(deleteClientButton, 5, 14, 2,1);
 
         addClientButton = new Button("Agregar");
         addClientButton.getStyleClass().add("boton");
-        addClientButton.setFont(Font.font("Verdana", 11));
-        addChild(addClientButton, 3, 14, 1, 1);
+        addClientButton.setFont(Font.font("Verdana", 16));
+        addChild(addClientButton, 2, 14, 2,1);
+        addClientButton.setOnAction(event -> MainPane.getInstance().toClientDialog());
 
     }
 

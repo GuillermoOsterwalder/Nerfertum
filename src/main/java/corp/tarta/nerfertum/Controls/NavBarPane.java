@@ -45,6 +45,7 @@ public class NavBarPane extends GridView {
         sellButton.getStyleClass().add("boton");
         sellButton.setFont(Font.font ("Verdana", 11));
         addChild(sellButton,0,1,1,1);
+        sellButton.setOnAction(e -> MainPane.getInstance().toSellView());
         //sellButton.setOnAction(e -> App);
 
 
