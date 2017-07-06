@@ -1,11 +1,12 @@
 package corp.tarta.nerfertum.View;
 
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 /**
  * Created by mariano on 26/06/17.
  */
-public class GridView extends GridPane {
+public abstract class GridView extends GridPane {
 
     public GridView(){
         inicGridSize();
@@ -66,4 +67,5 @@ public class GridView extends GridPane {
         this.getStyleClass().remove("pane");
         this.getStyleClass().add(p);
     }
+
 }
